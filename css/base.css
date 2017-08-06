@@ -2,10 +2,10 @@
 .visible-print-block {
     display: block !important;
 }
-body { font: 14px/1.4 Helvetica, sans-serif; }
+body { font: 14px/1.4 Helvetica, sans-serif; letter-spacing: 0.3px;}
 #page-wrap { width: 800px; margin: 0 auto; }
 p{
-    font: 12px Helvetica, sans-serif;
+    font: 13px Helvetica, sans-serif;
 }
 #logo { text-align: center; position: relative; margin-top: 25px; border: 1px solid #fff; overflow: hidden; }
 #logo img{
@@ -34,6 +34,7 @@ textarea:hover, textarea:focus, #items td.total-value textarea:hover, #items td.
     border: 2px solid #f0f0f0;
     border-radius: 5px;
     background: #fbfbfb;
+    -webkit-print-color-adjust: exact; 
 }
 #details ul{
     list-style: none;
@@ -42,6 +43,7 @@ textarea:hover, textarea:focus, #items td.total-value textarea:hover, #items td.
 }
 #details .col-xs-6{
     border-right: 2px solid #f0f0f0;
+    -webkit-print-color-adjust: exact; 
     padding: 0;
     border-radius: 5px;
 
@@ -49,14 +51,16 @@ textarea:hover, textarea:focus, #items td.total-value textarea:hover, #items td.
 #details p{
     display: block;
     float: left;
-    font: 12px Helvetica, sans-serif;
-    color: #adadad;
+    font: 13px Helvetica, sans-serif;
+    color: #acacac;
+    -webkit-print-color-adjust: exact; 
 }
 #details div[contenteditable], #details textarea{
      width: 60%; 
     font: 12px Helvetica, sans-serif;
     font-weight: bold;
     background: #fbfbfb;
+    letter-spacing: 0.4px;
 }
 
 #note h3{
@@ -65,13 +69,12 @@ textarea:hover, textarea:focus, #items td.total-value textarea:hover, #items td.
     font-weight: bold;
 }
 
-tr:nth-child(odd){background-color: #fbfbfb}
 #items textarea{
     font: 12px Helvetica, sans-serif;
 }
 #items { clear: both; width: 100%; margin: 30px 0 0 0; font: 12px Helvetica, sans-serif; }
 #items textarea { background-color:rgba(0, 0, 0, 0);}
-#items tr.item-row td { border: 0; vertical-align: top; padding: 10px 8px 10px 8px;; }
+#items tr.item-row td { border: 0; vertical-align: top; padding: 10px 8px 10px 8px; border: 2px solid #f0f0f0 ; }
 #items td .no{ width: 20px;}
 #items td .sku-code{ width: 60px;}
 #items td .description{ width: 180px;}
@@ -80,11 +83,12 @@ tr:nth-child(odd){background-color: #fbfbfb}
 #items td .brand, #items td .color, #items td .size, #items td .qty{ width: 30px;}
 #items td .cost{width: 50px;}
 #items td.description textarea { width: 100%; }
-#items td.total-line { border-right: 0; text-align: left; }
-#items td.total-value { border-left: 0; padding: 10px; }
-#items td.total-value textarea { height: 20px; background: none; }
+tr:nth-child(odd){background-color: #eeeeee; -webkit-print-color-adjust: exact; }
+#items td.total-line { border-right: 0; text-align: right; font: 14px Helvetica, sans-serif; text-transform: uppercase; font-weight: bold; background-color: #eeeeee; -webkit-print-color-adjust: exact;  }
+#items td.total-value { border-left: 0; padding: 10px; font: 14px Helvetica, sans-serif; font-weight: bold; background-color: #eeeeee; -webkit-print-color-adjust: exact;  }
+#items td.total-value textarea { height: 20px; background: none; font: 14px Helvetica, sans-serif; font-weight: bold; background-color: #eeeeee; -webkit-print-color-adjust: exact;  }
 #items td.balance { background: #eee; }
-#items td.blank { border: 0; }
+#items td.blank { border: 0; background-color: #eeeeee; -webkit-print-color-adjust: exact;  }
 
 #terms { margin: 20px 0 0 0; }
 #terms h3{
@@ -95,6 +99,7 @@ tr:nth-child(odd){background-color: #fbfbfb}
 #terms ol{
     margin-left: 5px;
     padding: 5px;
+    font: 13px Helvetica, sans-serif;
  }
 
  .delete-wpr { position: relative; }

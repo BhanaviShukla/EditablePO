@@ -1,15 +1,4 @@
-
-    // script is now loaded and executed.
-    // put your dependent JS here.
-
 function print_today() {
-  // ***********************************************
-  // AUTHOR: WWW.CGISCRIPT.NET, LLC
-  // URL: http://www.cgiscript.net
-  // Use the script, just leave this message intact.
-  // Download your FREE CGI/Perl Scripts today!
-  // ( http://www.cgiscript.net/scripts.htm )
-  // ***********************************************
   var now = new Date();
   var months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
   var date = ((now.getDate()<10) ? "0" : "")+ now.getDate();
@@ -119,7 +108,6 @@ $(document).ready(function() {
   bind();
   
   $(document).on('click', '.delete', function(){
-    console.log($(this).parents());
     $(this).parents('.item-row').remove();
     update_total_cost();
     update_total_units();
