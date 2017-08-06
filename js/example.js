@@ -1,3 +1,7 @@
+
+    // script is now loaded and executed.
+    // put your dependent JS here.
+
 function print_today() {
   // ***********************************************
   // AUTHOR: WWW.CGISCRIPT.NET, LLC
@@ -65,7 +69,6 @@ function update_total_cost() {
   $('.price').each(function(i){
     price = $(this).html().replace("$","");
     if (!isNaN(price)) total += Number(price);
-    console.log(price);
   });
 
   total = roundNumber(total,2);
@@ -75,15 +78,12 @@ function update_total_cost() {
 
 function update_total_units(){
   var total_u = 0;
-  $('.qty').each(function(i){
-    var row = $(this).parents('.item-row');
-    var qty = row.find('.qty').val();
-    console.log(qty);
-    if (!isNaN(qty)) total_u += Number(qty);
-    console.log(total_u);
-  });
-  console.log(total_u);
-  $('#subtotal-unit').html(total_u);
+  $qty = $('.qty').toArray();
+  var total = 0;
+  for (var i = 0; i < $qty.length; i++) {
+      total += $qty[i].value << 0;
+  }
+  $('#subtotal-unit').html(total);
 }
 
 function update_price() {
@@ -111,17 +111,18 @@ $(document).ready(function() {
   update_total_units();
    
   $("#addrow").click(function(){
-    $(".item-row:last").after('<tr class="item-row"><td><div class="delete-wpr"><textarea class="no"></textarea><a class="delete" href="javascript:;" title="Remove row">X</a></div></td><td><textarea class="sku-code"></textarea></td><td class="description"><textarea></textarea></td><td><textarea class="order-no"></textarea></td><td><textarea class="seller-sku-code"></textarea></td><td><textarea class="brand"></textarea></td><td><textarea class="color"></textarea></td><td><textarea class="size"></textarea></td><td><textarea class="cost">$0</textarea></td><td><textarea class="qty">1</textarea></td><td><span class="price">$0</span></td></tr>');
+    $(".item-row:last").after('<tr class="item-row"><td><div class="delete-wpr"><textarea class="no"></textarea><a class="delete" href="javascript:;" title="Remove row">X</a></div></td><td><textarea class="sku-code">Sku code</textarea></td><td class="description"><textarea>description</textarea></td><td><textarea class="order-no">order no.</textarea></td><td><textarea class="seller-sku-code">seller sku</textarea></td><td><textarea class="brand"></textarea></td><td><textarea class="color"></textarea></td><td><textarea class="size"></textarea></td><td><textarea class="cost">$0</textarea></td><td><textarea class="qty">0</textarea></td><td><span class="price">$0</span></td></tr>');
     if ($(".delete").length > 0) $(".delete").show();
     bind();
   });
   
   bind();
   
-  $(".delete").on('click',function(){
+  $(document).on('click', '.delete', function(){
+    console.log($(this).parents());
     $(this).parents('.item-row').remove();
     update_total_cost();
-    update_total_qty();
+    update_total_units();
     if ($(".delete").length < 2) $(".delete").hide();
   });
   
