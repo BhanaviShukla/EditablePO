@@ -57,7 +57,7 @@ textarea:hover, textarea:focus, #items td.total-value textarea:hover, #items td.
 }
 #details div[contenteditable], #details textarea{
      width: 60%; 
-    font: 12px Helvetica, sans-serif;
+    font: 13px Helvetica, sans-serif;
     font-weight: bold;
     background: #fbfbfb;
     letter-spacing: 0.4px;
