@@ -4,7 +4,9 @@
 }
 body { font: 14px/1.4 Helvetica, sans-serif; }
 #page-wrap { width: 800px; margin: 0 auto; }
-
+p{
+    font: 12px Helvetica, sans-serif;
+}
 #logo { text-align: center; position: relative; margin-top: 25px; border: 1px solid #fff; overflow: hidden; }
 #logo img{
     max-width: 540px; max-height: 100px;
@@ -78,8 +80,19 @@ tr:nth-child(odd){background-color: #fbfbfb}
 #items td .brand, #items td .color, #items td .size, #items td .qty{ width: 30px;}
 #items td .cost{width: 50px;}
 #items td.description textarea { width: 100%; }
-#items td.total-line { border-right: 0; text-align: right; }
+#items td.total-line { border-right: 0; text-align: left; }
 #items td.total-value { border-left: 0; padding: 10px; }
 #items td.total-value textarea { height: 20px; background: none; }
 #items td.balance { background: #eee; }
 #items td.blank { border: 0; }
+
+#terms { margin: 20px 0 0 0; }
+#terms h3{
+    font: 14px Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#terms ol{
+    margin-left: 5px;
+    padding: 5px;
+ }
