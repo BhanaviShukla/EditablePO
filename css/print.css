@@ -1,0 +1,24 @@
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+/* @import url('base.css'); */
+*{
+    display: inherit;
+}
+.label{
+    border: none;
+}
+table{
+    display: table;
+  }
+  tr{
+    display: table-row !important;
+  }
+  th,
+  td{
+    display: table-cell !important;
+  }
+textarea{
+    overflow: hidden;
+}
+#hiderow,.delete {
+  display: none;
+}
